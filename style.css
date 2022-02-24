@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.global-nav__logo {
+    color: #0a66c2;
+}
+body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+/* html, 
+body {
+    height: 100%;
+} */
+nav {
+    background-color: white;
+    padding: 8px 4%;  /* 8pxtop 4% left and right */
+    display: flex;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+
+    /* new code */
+    z-index: 1;
+
+
+}
+nav .search-area {
+    background-color: rgb(238,243,247);
+    color: #222;
+    display: flex;
+    width: 280px;
+    height: 34px;
+
+    /* new code */
+    border-radius: 5px ;
+}
+
+/* new code */
+nav .search-area:focus-within {
+    width: 350px;
+}
+
+nav .search-area svg {
+    width: 20px;
+    /* new code */
+    margin-left: 10px; 
+    align-self: center;
+    color: rgb(100, 98, 98);
+}
+nav .search-area input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+    padding: 5px 10px;
+    color: #555;
+}
+
+/* new code */
+nav .search-area input:focus-within{
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+main {
+    background-color: #fef2ef;
+    padding: 20px 9%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+main :is(.recent, .ads){
+    position: sticky;
+    top: 70px;
+
+
+}
+main .share-box {
+    height: 70px;
+    margin-bottom: 15px;
+}
+main .post {
+    height: 400px;
+    margin-bottom: 10px;
+    background-color: #eee;
+    border-radius: 15px;
+
+}
+/* main > * {  test this again*/
+.main-el {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e1df;
+}
+main #misc {
+    display: none;
+}
+main aside .profile-card {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+main aside .profile-card .profile-banner img {
+    width: 100%;
+}
+main aside .profile-card figure {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid white;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+main aside .profile-card figure img {
+    width: 100%;
+}
+
+main aside .name {
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 60px;
+    border-bottom: 1px solid #d8d4d4;
+}
+
+main aside .name h3 {
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+main aside .name p {
+    padding-bottom: 10px;
+    color: #696767;
+    font-size: small;
+}
+
+main aside .connection {
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main aside .connection .connect {
+    color: #777575;
+    font-size: 12px;
+}
+
+main aside .connection .network {
+    font-size: 12px;
+}
+
+main aside .connection .Numb {
+    color: #4667fb;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+main aside .viewed {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d8d4d4;
+}
+
+main aside .viewed .who {
+    color: #777575;
+    font-size: 12px;
+
+}
+
+main aside .viewed .numbr {
+    color: #4667fb;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.viewed + div {
+    padding: 15px 10px;
+    border-bottom: 1px solid #d8d4d4;
+}
+
+.access {
+    font-size: 11.5px;
+    color: #888787;
+}
+
+.premium {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.premium .try {
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.premium svg {
+    width: 18px;
+}
+
+.my-item {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.my-item .items {
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.my-item svg {
+    width: 18px;
+    color: #777575;
+}
+
+section .share-box .image-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section .share-box figure {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* position: relative; */
+    top: 5px;
+    /* left:  20%; */
+    /* transform: translateX(-50%) */
+}
+
+section .share-box .image-input figure img {
+    width: 100%;
+}
+
+
+
+/* for ipads and above */
+@media screen and (min-width: 768px)  {
+    main {
+        grid-template-columns: 203px 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px;
+
+    }
+    aside {
+        display: grid;
+        grid-template-rows: repeat(2, 424px);
+        gap: 10px;
+    }
+
+}
+
+
+/* for small laptops above */
+@media screen and (min-width: 992px) {
+    main {
+        grid-template-columns: 203px 1fr 250px;
+        padding: 20px 5%;
+    }
+    main #misc {
+        display: grid;
+        grid-template-rows: 354px 250px;
+        gap: 10px;
+    }
+
+
+}
+/* for large screens */
+@media screen and (min-width: 1200px) {
+    main {
+        grid-template-columns: 203px 1fr 300px;
+        padding: 20px 10%;
+    }
+}
